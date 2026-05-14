@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Place Finder | Adventuria</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .tool{max-width:980px;margin:0 auto;padding:18px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    input{flex:1; min-width:260px; padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(17,26,51,.65);color:var(--ink)}
+    .results{margin-top:12px;display:grid;gap:10px}
+    .res{padding:12px}
+    .k{color:var(--muted);font-size:12px}
+    .copy{margin-left:auto}
+  </style>
+</head>
+<body>
+  <div class="tool">
+    <div class="brand" style="margin-bottom:10px">
+      <a href="/" class="logo" style="text-decoration:none">A</a>
+      <div>
+        <h1 style="margin:0">Place Finder</h1>
+        <p style="margin:2px 0 0">Search real places (OSM). Copy coordinates into the Editor.</p>
+      </div>
+    </div>
+
+    <div class="card panel">
+      <div class="k">Tip: search is user-triggered and throttled (please keep usage moderate).</div>
+      <div class="row" style="margin-top:10px">
+        <input id="q" placeholder="Search: Forbidden City, Beijing" />
+        <button class="btn secondary" id="btn">Search</button>
+        <a class="btn ghost" href="/admin/">Open Editor</a>
+      </div>
+      <div class="results" id="results"></div>
+      <div class="k" style="margin-top:10px">Uses Nominatim. For public sites keep traffic moderate (policy: max ~1 request/sec, caching encouraged).</div>
+    </div>
+  </div>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    const res = $('#results');
+
+    const CACHE_KEY = 'adventuria_place_cache_v1';
+    const cache = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
+
+    let lastCall = 0;
+    async function search(q){
+      const now = Date.now();
+      if (now - lastCall < 1100) {
+        await new Promise(r => setTimeout(r, 1100 - (now-lastCall)));
+      }
+      lastCall = Date.now();
+
+      if (cache[q]) return cache[q];
+
+      // Nominatim public endpoint — user-triggered queries only.
+      const url = new URL('https://nominatim.openstreetmap.org/search');
+      url.searchParams.set('format','jsonv2');
+      url.searchParams.set('q', q);
+      url.searchParams.set('limit','8');
+      url.searchParams.set('accept-language','en,zh');
+      url.searchParams.set('addressdetails','1');
+
+      const r = await fetch(url.toString(), { headers: { 'Accept': 'application/json' } });
+      if (!r.ok) throw new Error('Search failed');
+      const data = await r.json();
+      cache[q] = data;
+      localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+      return data;
+    }
+
+    function copy(text){
+      navigator.clipboard.writeText(text);
+    }
+
+    function render(items){
+      res.innerHTML = '';
+      if (!items.length) {
+        res.innerHTML = '<div class="k">No results.</div>';
+        return;
+      }
+      for (const it of items){
+        const el = document.createElement('div');
+        el.className = 'card res';
+        const name = it.display_name;
+        const lat = Number(it.lat).toFixed(6);
+        const lng = Number(it.lon).toFixed(6);
+        const line = `${lng}, ${lat}`;
+        el.innerHTML = `
+          <div style="display:flex; gap:10px; align-items:center">
+            <div style="font-weight:900; flex:1">${name}</div>
+            <button class="btn copy">Copy coords</button>
+          </div>
+          <div class="k" style="margin-top:6px">${line}</div>
+        `;
+        el.querySelector('button').addEventListener('click', () => copy(line));
+        res.appendChild(el);
+      }
+    }
+
+    $('#btn').addEventListener('click', async () => {
+      const q = $('#q').value.trim();
+      if (!q) return;
+      res.innerHTML = '<div class="k">Searching…</div>';
+      try {
+        const items = await search(q);
+        render(items);
+      } catch(e){
+        res.innerHTML = '<div class="k">Search error. Try again later.</div>';
+      }
+    });
+
+    $('#q').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') $('#btn').click();
+    });
+  </script>
+</body>
+</html>
