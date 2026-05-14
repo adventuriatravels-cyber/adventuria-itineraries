@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>China — Oct 2026 | Adventuria</title>
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Netlify Identity widget (Decap CMS login when using git-gateway) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="trip">
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <a href="/" class="logo" style="text-decoration:none">A</a>
+        <div>
+          <h1>China — Oct 2026</h1>
+          <p>Day-by-day itinerary · DD Month · English</p>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <div class="daysHeader">
+          <h2>Itinerary</h2>
+          <span class="small">Draft → Publish in <a href="/admin/">/admin</a></span>
+        </div>
+        <div class="btnRow">
+          <button class="btn secondary" id="btnPresent">Presentation mode</button>
+          <a class="btn ghost" href="/tools/place-finder.html">Place Finder</a>
+        </div>
+      </div>
+
+      <div class="accordion" id="accordion"></div>
+
+      <div class="small" style="margin-top:12px; opacity:.85">
+        Map data © OpenStreetMap contributors. Search uses OSM Nominatim—please keep usage moderate.
+      </div>
+    </aside>
+
+    <main class="mapWrap">
+      <div id="map"></div>
+
+      <div class="hud">
+        <div class="pill" id="hudTrip">China — Oct 2026</div>
+        <div class="pill" id="hudRange">17 Oct → 29 Oct 2026</div>
+      </div>
+
+      <div class="hoverStack" id="hoverStack"></div>
+
+      <div class="timeline card" id="timeline">
+        <div class="panel">
+          <div class="bigTitle" id="presentTitle">Day 0 — Beijing</div>
+          <div class="small" id="presentDate">17 Oct</div>
+          <div class="small" id="presentLine"></div>
+          <div class="sliderRow">
+            <input id="daySlider" type="range" min="0" max="12" value="0" />
+            <button class="btn" id="btnPlay">Play</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MapLibre CDN -->
+  <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
