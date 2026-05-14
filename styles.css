@@ -97,3 +97,78 @@ a{color:var(--gold2)}
   .shell{grid-template-columns: 1fr; grid-template-rows: 52vh 48vh}
   .sidebar{border-right:none; border-bottom:1px solid rgba(255,255,255,.06)}
 }
+/* === Adventuria Game Upgrade === */
+
+/* Glow effect generale */
+.glow {
+  box-shadow:
+    0 0 10px rgba(246,195,79,0.6),
+    0 0 20px rgba(246,195,79,0.4),
+    0 0 40px rgba(246,195,79,0.2);
+}
+
+/* Sidebar più "game panel" */
+.sidebar {
+  background:
+    linear-gradient(180deg, #0a0f2a 0%, #050814 100%);
+  border-right: 2px solid rgba(246,195,79,0.2);
+}
+
+/* Migliora card */
+.card {
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border: 1px solid rgba(246,195,79,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Bottoni stile gioco */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.4s;
+}
+
+.btn:hover::after {
+  left: 100%;
+}
+
+/* Glow per map overlay */
+.mapWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(0,0,0,0.7);
+}
+
+/* Marker punti città (più vivi) */
+.maplibregl-marker {
+  filter: drop-shadow(0 0 10px rgba(255,200,100,0.8));
+}
+
+/* Tooltip card lato mappa */
+.hoverCard {
+  backdrop-filter: blur(8px);
+  background: rgba(15,20,40,0.9);
+  border: 1px solid rgba(255,215,150,0.3);
+}
+
+/* Timeline */
+.timeline {
+  border: 1px solid rgba(246,195,79,0.2);
+  background: rgba(10,15,40,0.8);
+}
