@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adventuria Itineraries</title>
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Netlify Identity widget (needed for Decap CMS login when using git-gateway) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="home">
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1 id="siteName">Adventuria Itineraries</h1>
+          <p id="siteTag">Client-ready travel itineraries on a 3D globe</p>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <div style="font-weight:900; color:var(--gold2)">Your adventures</div>
+        <div class="small" style="margin-top:6px">Open a trip to explore the globe, day-by-day.</div>
+        <div class="btnRow">
+          <a class="btn secondary" href="/admin/">Open Editor</a>
+          <a class="btn ghost" href="/tools/place-finder.html">Place Finder</a>
+        </div>
+      </div>
+
+      <div class="list" id="tripList"></div>
+
+      <div class="small" style="margin-top:12px; opacity:.85">
+        Map data © OpenStreetMap contributors. Please keep usage moderate.
+      </div>
+    </aside>
+
+    <main class="mapWrap">
+      <div id="map"></div>
+      <div class="hud">
+        <div class="pill">Tip: open a trip to start</div>
+      </div>
+      <div class="hoverStack" id="hoverStack"></div>
+    </main>
+  </div>
+
+  <!-- MapLibre CDN -->
+  <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  <script src="/app.js"></script>
+
+  <script>
+    // Homepage shows a lightweight globe too
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://demotiles.maplibre.org/style.json',
+      center: [104.0, 35.0],
+      zoom: 1.7,
+      pitch: 30,
+      bearing: -10
+    });
+    map.addControl(new maplibregl.NavigationControl({visualizePitch:true}), 'top-right');
+    map.on('load', () => {
+      try { if (typeof map.setProjection==='function') map.setProjection({type:'globe'}); } catch(e) {}
+      try { if (typeof map.setFog==='function') map.setFog({ 'color':'rgba(12,18,42,0.65)','high-color':'rgba(40,72,140,0.55)','space-color':'#03040b','horizon-blend':0.25 }); } catch(e) {}
+    });
+  </script>
+</body>
+</html>
