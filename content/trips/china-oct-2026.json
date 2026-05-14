@@ -1,25 +1,69 @@
 {
-  "id": "china-oct-2026",
-  "title": "China \u2014 Oct 2026",
-  "country": "China",
-  "hero": {
-    "subtitle": "A client-ready, game-style itinerary on a 3D globe",
-    "coverCity": "Beijing"
-  },
   "settings": {
     "startView": {
-      "lng": 104.0,
-      "lat": 35.0,
+      "lng": 104,
+      "lat": 35,
       "zoom": 2.3
     },
     "cityFocusZoom": 8.5,
     "urbanCoreKmDefault": 12
   },
+  "transfers": [
+    {
+      "from": "dublin",
+      "to": "beijing",
+      "type": "plane",
+      "day": 0,
+      "label": "Dublin → Beijing"
+    },
+    {
+      "from": "beijing",
+      "to": "luoyang",
+      "type": "train",
+      "day": 3,
+      "label": "Beijing → Luoyang (train)"
+    },
+    {
+      "from": "luoyang",
+      "to": "xian",
+      "type": "train",
+      "day": 4,
+      "label": "Luoyang → Xi'an (train)"
+    },
+    {
+      "from": "xian",
+      "to": "chongqing",
+      "type": "train",
+      "day": 6,
+      "label": "Xi'an → Chongqing (train)"
+    },
+    {
+      "from": "chongqing",
+      "to": "zhangjiajie",
+      "type": "train",
+      "day": 8,
+      "label": "Chongqing → Zhangjiajie (train)"
+    },
+    {
+      "from": "zhangjiajie",
+      "to": "beijing2",
+      "type": "plane",
+      "day": 11,
+      "label": "Zhangjiajie → Beijing (flight)"
+    },
+    {
+      "from": "beijing2",
+      "to": "dublin",
+      "type": "plane",
+      "day": 12,
+      "label": "Beijing → Dublin"
+    }
+  ],
   "cities": [
     {
       "id": "beijing",
       "name_en": "Beijing",
-      "name_local": "\u5317\u4eac",
+      "name_local": "北京",
       "lng": 116.4074,
       "lat": 39.9042,
       "urban_core_km": 12,
@@ -44,7 +88,7 @@
     {
       "id": "luoyang",
       "name_en": "Luoyang",
-      "name_local": "\u6d1b\u9633",
+      "name_local": "洛阳",
       "lng": 112.4536,
       "lat": 34.6197,
       "urban_core_km": 10,
@@ -57,14 +101,14 @@
         {
           "day": 4,
           "date": "2026-10-21",
-          "title": "Shaolin + Longmen \u2192 Xi'an"
+          "title": "Shaolin + Longmen → Xi'an"
         }
       ]
     },
     {
       "id": "xian",
       "name_en": "Xi'an",
-      "name_local": "\u897f\u5b89",
+      "name_local": "西安",
       "lng": 108.9398,
       "lat": 34.3416,
       "urban_core_km": 11,
@@ -77,14 +121,14 @@
         {
           "day": 6,
           "date": "2026-10-23",
-          "title": "Goose Pagoda \u2192 Chongqing"
+          "title": "Goose Pagoda → Chongqing"
         }
       ]
     },
     {
       "id": "chongqing",
       "name_en": "Chongqing",
-      "name_local": "\u91cd\u5e86",
+      "name_local": "重庆",
       "lng": 106.5516,
       "lat": 29.563,
       "urban_core_km": 13,
@@ -102,14 +146,14 @@
         {
           "day": 8,
           "date": "2026-10-25",
-          "title": "City walk \u2192 Zhangjiajie"
+          "title": "City walk → Zhangjiajie"
         }
       ]
     },
     {
       "id": "zhangjiajie",
       "name_en": "Zhangjiajie",
-      "name_local": "\u5f20\u5bb6\u754c",
+      "name_local": "张家界",
       "lng": 110.4792,
       "lat": 29.1171,
       "urban_core_km": 12,
@@ -127,14 +171,14 @@
         {
           "day": 11,
           "date": "2026-10-28",
-          "title": "Forest (South) \u2192 Fly Beijing"
+          "title": "Forest (South) → Fly Beijing"
         }
       ]
     },
     {
       "id": "beijing2",
       "name_en": "Beijing",
-      "name_local": "\u5317\u4eac",
+      "name_local": "北京",
       "lng": 116.4074,
       "lat": 39.9042,
       "urban_core_km": 12,
@@ -147,64 +191,64 @@
       ]
     }
   ],
-  "transfers": [
+  "places": [
     {
-      "from": "dublin",
-      "to": "beijing",
-      "type": "plane",
-      "day": 0,
-      "label": "Dublin \u2192 Beijing"
+      "id": "forbidden-city",
+      "name_en": "Forbidden City",
+      "name_local": "故宫",
+      "category": "museum",
+      "lng": 116.397,
+      "lat": 39.9163,
+      "city": "beijing",
+      "days": [
+        3
+      ]
     },
     {
-      "from": "beijing",
-      "to": "luoyang",
-      "type": "train",
-      "day": 3,
-      "label": "Beijing \u2192 Luoyang (train)"
+      "id": "temple-of-heaven",
+      "name_en": "Temple of Heaven",
+      "name_local": "天坛",
+      "category": "temple",
+      "lng": 116.4122,
+      "lat": 39.8822,
+      "city": "beijing",
+      "days": [
+        1
+      ]
     },
     {
-      "from": "luoyang",
-      "to": "xian",
-      "type": "train",
-      "day": 4,
-      "label": "Luoyang \u2192 Xi'an (train)"
+      "id": "mutianyu",
+      "name_en": "Mutianyu Great Wall",
+      "name_local": "慕田峪长城",
+      "category": "landmark",
+      "lng": 116.5616,
+      "lat": 40.4319,
+      "city": "beijing",
+      "days": [
+        2
+      ]
     },
     {
-      "from": "xian",
-      "to": "chongqing",
-      "type": "train",
-      "day": 6,
-      "label": "Xi'an \u2192 Chongqing (train)"
-    },
-    {
-      "from": "chongqing",
-      "to": "zhangjiajie",
-      "type": "train",
-      "day": 8,
-      "label": "Chongqing \u2192 Zhangjiajie (train)"
-    },
-    {
-      "from": "zhangjiajie",
-      "to": "beijing2",
-      "type": "plane",
-      "day": 11,
-      "label": "Zhangjiajie \u2192 Beijing (flight)"
-    },
-    {
-      "from": "beijing2",
-      "to": "dublin",
-      "type": "plane",
-      "day": 12,
-      "label": "Beijing \u2192 Dublin"
+      "id": "terracotta",
+      "name_en": "Terracotta Army",
+      "name_local": "兵马俑",
+      "category": "museum",
+      "lng": 109.2786,
+      "lat": 34.3853,
+      "city": "xian",
+      "days": [
+        5
+      ]
     }
   ],
+  "country": "China",
   "days": [
     {
       "date": "2026-10-17",
-      "day": 0,
-      "city": "beijing",
+      "day": 1,
+      "city": "Beijing",
       "type": "flight",
-      "morning": "Flight Dublin \u2192 Beijing Capital International Airport",
+      "morning": "Flight Dublin → Beijing Capital International Airport TEST EDIT DARIO",
       "afternoon": "",
       "evening": ""
     },
@@ -312,59 +356,15 @@
       "day": 12,
       "city": "beijing2",
       "type": "flight",
-      "morning": "Flight Beijing \u2192 Dublin",
+      "morning": "Flight Beijing → Dublin",
       "afternoon": "",
       "evening": ""
     }
   ],
-  "places": [
-    {
-      "id": "forbidden-city",
-      "name_en": "Forbidden City",
-      "name_local": "\u6545\u5bab",
-      "category": "museum",
-      "lng": 116.397,
-      "lat": 39.9163,
-      "city": "beijing",
-      "days": [
-        3
-      ]
-    },
-    {
-      "id": "temple-of-heaven",
-      "name_en": "Temple of Heaven",
-      "name_local": "\u5929\u575b",
-      "category": "temple",
-      "lng": 116.4122,
-      "lat": 39.8822,
-      "city": "beijing",
-      "days": [
-        1
-      ]
-    },
-    {
-      "id": "mutianyu",
-      "name_en": "Mutianyu Great Wall",
-      "name_local": "\u6155\u7530\u5cea\u957f\u57ce",
-      "category": "landmark",
-      "lng": 116.5616,
-      "lat": 40.4319,
-      "city": "beijing",
-      "days": [
-        2
-      ]
-    },
-    {
-      "id": "terracotta",
-      "name_en": "Terracotta Army",
-      "name_local": "\u5175\u9a6c\u4fd1",
-      "category": "museum",
-      "lng": 109.2786,
-      "lat": 34.3853,
-      "city": "xian",
-      "days": [
-        5
-      ]
-    }
-  ]
+  "title": "China — Oct 2026",
+  "hero": {
+    "subtitle": "A client-ready, game-style itinerary on a 3D globe",
+    "coverCity": "Beijing"
+  },
+  "id": "china-oct-2026"
 }
