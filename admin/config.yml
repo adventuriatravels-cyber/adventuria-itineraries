@@ -1,0 +1,106 @@
+# Adventuria Itineraries — Decap CMS
+# Uses Netlify Identity + Git Gateway (easy setup). Note: Git Gateway is deprecated but still works.
+# You can migrate later if needed.
+
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site"
+    label: "Site"
+    files:
+      - file: "content/trips.json"
+        label: "Trips Index"
+        name: "trips_index"
+        fields:
+          - { label: "Site", name: "site", widget: "object", fields:
+              [
+                { label: "Name", name: "name", widget: "string" },
+                { label: "Tagline", name: "tagline", widget: "string" },
+                { label: "Date format", name: "date_format", widget: "string", default: "DD MMM" },
+                { label: "Language", name: "language", widget: "string", default: "en" }
+              ]
+            }
+          - label: "Trips"
+            name: "trips"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Path", name: "path", widget: "string" }
+              - { label: "Cover city", name: "cover_city", widget: "string" }
+              - { label: "Date range", name: "date_range", widget: "string" }
+
+  - name: "trips"
+    label: "Trips"
+    files:
+      - file: "content/trips/china-oct-2026.json"
+        label: "China — Oct 2026"
+        name: "china_oct_2026"
+        fields:
+          - { label: "ID", name: "id", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Country", name: "country", widget: "string" }
+
+          - label: "Settings"
+            name: "settings"
+            widget: "object"
+            fields:
+              - label: "Start view"
+                name: "startView"
+                widget: "object"
+                fields:
+                  - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
+                  - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
+                  - { label: "Zoom", name: "zoom", widget: "number", value_type: "float" }
+              - { label: "City focus zoom", name: "cityFocusZoom", widget: "number", value_type: "float" }
+              - { label: "Urban core default (km)", name: "urbanCoreKmDefault", widget: "number", value_type: "int" }
+
+          - label: "Cities"
+            name: "cities"
+            widget: "list"
+            fields:
+              - { label: "City ID", name: "id", widget: "string" }
+              - { label: "Name (EN)", name: "name_en", widget: "string" }
+              - { label: "Name (Local)", name: "name_local", widget: "string", required: false }
+              - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
+              - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
+              - { label: "Urban core (km)", name: "urban_core_km", widget: "number", value_type: "int", required: false }
+              - label: "Highlight cards (per day)"
+                name: "highlights"
+                widget: "list"
+                fields:
+                  - { label: "Day", name: "day", widget: "number", value_type: "int" }
+                  - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+                  - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Days"
+            name: "days"
+            widget: "list"
+            fields:
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+              - { label: "Day number", name: "day", widget: "number", value_type: "int" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Type", name: "type", widget: "select", options: ["city","arrival","transfer","flight","trip","nature"] }
+              - { label: "Morning", name: "morning", widget: "text", required: false }
+              - { label: "Afternoon", name: "afternoon", widget: "text", required: false }
+              - { label: "Evening", name: "evening", widget: "text", required: false }
+
+          - label: "Places (Pins)"
+            name: "places"
+            widget: "list"
+            fields:
+              - { label: "Place ID", name: "id", widget: "string" }
+              - { label: "Name (EN)", name: "name_en", widget: "string" }
+              - { label: "Name (Local)", name: "name_local", widget: "string", required: false }
+              - { label: "Category", name: "category", widget: "select", options: ["temple","landmark","museum","nature","food","viewpoint","shopping"] }
+              - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
+              - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
+              - { label: "City", name: "city", widget: "string", required: false }
+              - { label: "Days (numbers)", name: "days", widget: "list", field: { label: "Day", name: "day", widget: "number", value_type: "int" }, required: false }
