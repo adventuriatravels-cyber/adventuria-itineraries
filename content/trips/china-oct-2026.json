@@ -1,0 +1,370 @@
+{
+  "id": "china-oct-2026",
+  "title": "China \u2014 Oct 2026",
+  "country": "China",
+  "hero": {
+    "subtitle": "A client-ready, game-style itinerary on a 3D globe",
+    "coverCity": "Beijing"
+  },
+  "settings": {
+    "startView": {
+      "lng": 104.0,
+      "lat": 35.0,
+      "zoom": 2.3
+    },
+    "cityFocusZoom": 8.5,
+    "urbanCoreKmDefault": 12
+  },
+  "cities": [
+    {
+      "id": "beijing",
+      "name_en": "Beijing",
+      "name_local": "\u5317\u4eac",
+      "lng": 116.4074,
+      "lat": 39.9042,
+      "urban_core_km": 12,
+      "highlights": [
+        {
+          "day": 1,
+          "date": "2026-10-18",
+          "title": "Arrival + Temple of Heaven"
+        },
+        {
+          "day": 2,
+          "date": "2026-10-19",
+          "title": "Great Wall + Summer Palace"
+        },
+        {
+          "day": 3,
+          "date": "2026-10-20",
+          "title": "Forbidden City + Train"
+        }
+      ]
+    },
+    {
+      "id": "luoyang",
+      "name_en": "Luoyang",
+      "name_local": "\u6d1b\u9633",
+      "lng": 112.4536,
+      "lat": 34.6197,
+      "urban_core_km": 10,
+      "highlights": [
+        {
+          "day": 3,
+          "date": "2026-10-20",
+          "title": "Arrive Luoyang"
+        },
+        {
+          "day": 4,
+          "date": "2026-10-21",
+          "title": "Shaolin + Longmen \u2192 Xi'an"
+        }
+      ]
+    },
+    {
+      "id": "xian",
+      "name_en": "Xi'an",
+      "name_local": "\u897f\u5b89",
+      "lng": 108.9398,
+      "lat": 34.3416,
+      "urban_core_km": 11,
+      "highlights": [
+        {
+          "day": 5,
+          "date": "2026-10-22",
+          "title": "Terracotta Warriors"
+        },
+        {
+          "day": 6,
+          "date": "2026-10-23",
+          "title": "Goose Pagoda \u2192 Chongqing"
+        }
+      ]
+    },
+    {
+      "id": "chongqing",
+      "name_en": "Chongqing",
+      "name_local": "\u91cd\u5e86",
+      "lng": 106.5516,
+      "lat": 29.563,
+      "urban_core_km": 13,
+      "highlights": [
+        {
+          "day": 6,
+          "date": "2026-10-23",
+          "title": "Night cruise"
+        },
+        {
+          "day": 7,
+          "date": "2026-10-24",
+          "title": "Wulong day trip"
+        },
+        {
+          "day": 8,
+          "date": "2026-10-25",
+          "title": "City walk \u2192 Zhangjiajie"
+        }
+      ]
+    },
+    {
+      "id": "zhangjiajie",
+      "name_en": "Zhangjiajie",
+      "name_local": "\u5f20\u5bb6\u754c",
+      "lng": 110.4792,
+      "lat": 29.1171,
+      "urban_core_km": 12,
+      "highlights": [
+        {
+          "day": 9,
+          "date": "2026-10-26",
+          "title": "National Forest Park"
+        },
+        {
+          "day": 10,
+          "date": "2026-10-27",
+          "title": "Grand Canyon"
+        },
+        {
+          "day": 11,
+          "date": "2026-10-28",
+          "title": "Forest (South) \u2192 Fly Beijing"
+        }
+      ]
+    },
+    {
+      "id": "beijing2",
+      "name_en": "Beijing",
+      "name_local": "\u5317\u4eac",
+      "lng": 116.4074,
+      "lat": 39.9042,
+      "urban_core_km": 12,
+      "highlights": [
+        {
+          "day": 12,
+          "date": "2026-10-29",
+          "title": "Fly back to Dublin"
+        }
+      ]
+    }
+  ],
+  "transfers": [
+    {
+      "from": "dublin",
+      "to": "beijing",
+      "type": "plane",
+      "day": 0,
+      "label": "Dublin \u2192 Beijing"
+    },
+    {
+      "from": "beijing",
+      "to": "luoyang",
+      "type": "train",
+      "day": 3,
+      "label": "Beijing \u2192 Luoyang (train)"
+    },
+    {
+      "from": "luoyang",
+      "to": "xian",
+      "type": "train",
+      "day": 4,
+      "label": "Luoyang \u2192 Xi'an (train)"
+    },
+    {
+      "from": "xian",
+      "to": "chongqing",
+      "type": "train",
+      "day": 6,
+      "label": "Xi'an \u2192 Chongqing (train)"
+    },
+    {
+      "from": "chongqing",
+      "to": "zhangjiajie",
+      "type": "train",
+      "day": 8,
+      "label": "Chongqing \u2192 Zhangjiajie (train)"
+    },
+    {
+      "from": "zhangjiajie",
+      "to": "beijing2",
+      "type": "plane",
+      "day": 11,
+      "label": "Zhangjiajie \u2192 Beijing (flight)"
+    },
+    {
+      "from": "beijing2",
+      "to": "dublin",
+      "type": "plane",
+      "day": 12,
+      "label": "Beijing \u2192 Dublin"
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-10-17",
+      "day": 0,
+      "city": "beijing",
+      "type": "flight",
+      "morning": "Flight Dublin \u2192 Beijing Capital International Airport",
+      "afternoon": "",
+      "evening": ""
+    },
+    {
+      "date": "2026-10-18",
+      "day": 1,
+      "city": "beijing",
+      "type": "arrival",
+      "morning": "Arrival 05:10. Chinese breakfast. Temple of Heaven + Taichi class.",
+      "afternoon": "Hotel check-in.",
+      "evening": "Free time."
+    },
+    {
+      "date": "2026-10-19",
+      "day": 2,
+      "city": "beijing",
+      "type": "city",
+      "morning": "Mutianyu Great Wall (tickets + chairlift + toboggan).",
+      "afternoon": "Summer Palace.",
+      "evening": "Back to hotel / optional taxi."
+    },
+    {
+      "date": "2026-10-20",
+      "day": 3,
+      "city": "luoyang",
+      "type": "transfer",
+      "morning": "Forbidden City with English guide.",
+      "afternoon": "Train to Luoyang. Driver pickup to hotel.",
+      "evening": "Rest."
+    },
+    {
+      "date": "2026-10-21",
+      "day": 4,
+      "city": "xian",
+      "type": "transfer",
+      "morning": "Shaolin Temple + 1h martial arts learning (consider English guide).",
+      "afternoon": "Longmen Grottoes. Train to Xi'an. Transfer to hotel.",
+      "evening": "Rest."
+    },
+    {
+      "date": "2026-10-22",
+      "day": 5,
+      "city": "xian",
+      "type": "city",
+      "morning": "Terracotta Warriors with local English guide.",
+      "afternoon": "Xi'an City Walls + bike.",
+      "evening": "Free time."
+    },
+    {
+      "date": "2026-10-23",
+      "day": 6,
+      "city": "chongqing",
+      "type": "transfer",
+      "morning": "Giant Wild Goose Pagoda.",
+      "afternoon": "Train to Chongqing. Pickup to hotel.",
+      "evening": "Night: Chongqing cruise."
+    },
+    {
+      "date": "2026-10-24",
+      "day": 7,
+      "city": "chongqing",
+      "type": "trip",
+      "morning": "Day trip to Wulong.",
+      "afternoon": "Continue Wulong visit.",
+      "evening": "Saturday night drone show."
+    },
+    {
+      "date": "2026-10-25",
+      "day": 8,
+      "city": "zhangjiajie",
+      "type": "transfer",
+      "morning": "Chongqing city walk incl. Luohan Temple.",
+      "afternoon": "Train to Zhangjiajie. Pickup to Wulingyuan hotel.",
+      "evening": "Rest."
+    },
+    {
+      "date": "2026-10-26",
+      "day": 9,
+      "city": "zhangjiajie",
+      "type": "nature",
+      "morning": "Zhangjiajie National Forest Park (ticket + cable cars).",
+      "afternoon": "Continue park visit.",
+      "evening": "Rest."
+    },
+    {
+      "date": "2026-10-27",
+      "day": 10,
+      "city": "zhangjiajie",
+      "type": "nature",
+      "morning": "Grand Canyon (pickup + ticket).",
+      "afternoon": "Continue canyon.",
+      "evening": "Rest."
+    },
+    {
+      "date": "2026-10-28",
+      "day": 11,
+      "city": "beijing2",
+      "type": "flight",
+      "morning": "Checkout. Visit Forest Park lower part (South entrance).",
+      "afternoon": "Transfer to airport. Flight to Beijing (late afternoon/evening).",
+      "evening": "Arrive Beijing."
+    },
+    {
+      "date": "2026-10-29",
+      "day": 12,
+      "city": "beijing2",
+      "type": "flight",
+      "morning": "Flight Beijing \u2192 Dublin",
+      "afternoon": "",
+      "evening": ""
+    }
+  ],
+  "places": [
+    {
+      "id": "forbidden-city",
+      "name_en": "Forbidden City",
+      "name_local": "\u6545\u5bab",
+      "category": "museum",
+      "lng": 116.397,
+      "lat": 39.9163,
+      "city": "beijing",
+      "days": [
+        3
+      ]
+    },
+    {
+      "id": "temple-of-heaven",
+      "name_en": "Temple of Heaven",
+      "name_local": "\u5929\u575b",
+      "category": "temple",
+      "lng": 116.4122,
+      "lat": 39.8822,
+      "city": "beijing",
+      "days": [
+        1
+      ]
+    },
+    {
+      "id": "mutianyu",
+      "name_en": "Mutianyu Great Wall",
+      "name_local": "\u6155\u7530\u5cea\u957f\u57ce",
+      "category": "landmark",
+      "lng": 116.5616,
+      "lat": 40.4319,
+      "city": "beijing",
+      "days": [
+        2
+      ]
+    },
+    {
+      "id": "terracotta",
+      "name_en": "Terracotta Army",
+      "name_local": "\u5175\u9a6c\u4fd1",
+      "category": "museum",
+      "lng": 109.2786,
+      "lat": 34.3853,
+      "city": "xian",
+      "days": [
+        5
+      ]
+    }
+  ]
+}

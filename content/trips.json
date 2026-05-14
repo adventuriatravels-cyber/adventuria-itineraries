@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name": "Adventuria Itineraries",
+    "tagline": "Client-ready travel itineraries on a 3D globe",
+    "date_format": "DD MMM",
+    "language": "en"
+  },
+  "trips": [
+    {
+      "id": "china-oct-2026",
+      "title": "China \u2014 Oct 2026",
+      "path": "/adventures/china-oct-2026/",
+      "cover_city": "Beijing",
+      "date_range": "17 Oct \u2192 29 Oct 2026"
+    }
+  ]
+}
