@@ -4,6 +4,7 @@
 
 backend:
   name: git-gateway
+  repo: adventuriatravels-cyber/adventuria-itineraries
   branch: main
 
 publish_mode: editorial_workflow
